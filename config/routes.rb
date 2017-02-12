@@ -3,7 +3,6 @@ SampleApp::Application.routes.draw do
   devise_for :users, :controllers => {
     :registrations => "registrations"
   }
-  #get "users/show"
   resources :users, only: [:show, :index, :destroy]
   root  'static_pages#home'
   match '/help',    to: 'static_pages#help',    via: 'get'
